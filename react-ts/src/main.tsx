@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  AppContext,
+  // AppContext,
+  AppRef,
   // UseStateHook
 } from './hooks';
 import './index.css';
@@ -9,6 +10,7 @@ import './index.css';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     {/* <UseStateHook /> */}
-    <AppContext />
+    {/* <AppContext /> */}
+    <AppRef />
   </React.StrictMode>
 );
