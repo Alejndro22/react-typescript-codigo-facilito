@@ -10,6 +10,7 @@ export const GrandChild = ({}: Props) => {
   // handled the app braks
 
   // I can handle this by wrapping this component by an ErrorBoundary on the parent
+
   const randomFunction = () => {
     throw new Error("I'm an error");
   };
