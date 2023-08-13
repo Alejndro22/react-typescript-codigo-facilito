@@ -11,7 +11,8 @@ import ReactDOM from 'react-dom/client';
 // } from './hooks';
 // import { FormApp } from './forms';
 // import { AppStyles } from './styles/AppStyles';
-import { ErrorsApp } from './errors/ErrorsApp';
+// import { ErrorsApp } from './errors/ErrorsApp';
+import { UtilityApp } from './utility/UtilityApp';
 
 import './index.css';
 
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* <MemoCallbackApp /> */}
     {/* <FormApp /> */}
     {/* <AppStyles /> */}
-    <ErrorsApp />
+    {/* <ErrorsApp /> */}
+    <UtilityApp />
   </React.StrictMode>
 );
