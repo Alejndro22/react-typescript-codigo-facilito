@@ -100,3 +100,85 @@ setHobbies(alej);
 // ----------------------------------------------------------------------------------------------------------------
 
 // Record, Awaited, Parameters, ReadOnly, NonNullable -- utility types
+
+// -- Record --
+
+// Very useful if all my properties are of the same type
+// The Record utility type lets you create an object type with a set of properties whose keys
+// are of one type and whose values are of another type.
+// structure is Record< -Key types- , -Value types->
+
+// This would accept any string property with string value
+// type PersonRecord = Record<string, string>
+
+// Here only name and age are expected, and if there's another property will be cosidered an error
+// And expected value types can be string and number
+type PersonRecord = Record<'name' | 'age', string | number>;
+
+const newDoug: PersonRecord = {
+  name: 'Doug',
+  age: 22,
+};
+
+// -- Awaited --
+
+async function returnNumberAsync(a: number) {
+  return a;
+}
+
+// y type is a Promise with numbeer type, but mainly a Promise: y: Promise<number>
+// let y: ReturnType<typeof returnNumberAsync>;
+// y = returnNumberAsync(1)
+
+// That's why if I try to use a number func this displays an error
+// Property 'toFixed' does not exist on type 'Promise<number>'
+// y.toFixed(2)
+
+// Here I can used an Awaited
+// The Awaited utility type lets you get the type of a Promise's resolved value.
+// Now y is number type
+let y: Awaited<ReturnType<typeof returnNumberAsync>>;
+
+// -- Parameters --
+
+async function returnNumberAndStringAsync(a: number, b: string) {
+  console.log(b);
+  return a;
+}
+
+// The generated types are the same as the ones receibe as parameters on function
+// The Parameters utility type lets you get the parameters of a function type.
+// Now z types are = z: [a: number, b: string]
+
+let z: Parameters<typeof returnNumberAndStringAsync>;
+
+// -- NonNullable --
+
+// Usually local storage items can or cannot exist = string | null
+type Preferences = string | null;
+const preferences: Preferences = localStorage.getItem('preferences');
+
+// To prevent a null or undefined value, I can use NonNullable (Could happen when cleaning localStorage)
+// The NonNullable utility type lets you exclude null and undefined from a union type.
+type CleanPreferences = NonNullable<Preferences>;
+// You can postfix an expression with ! to tell TypeScript that you know it's not null or undefined.
+// This works the same as an 'as' assertion.
+const cleanPreferences: CleanPreferences = preferences!;
+
+// -- Readonly --
+
+// Useful when i want to prevent my properties from being modified
+interface ImmutablePerson {
+  name: string;
+  age: number;
+}
+
+// The Readonly utility type lets you make all the properties of an object readonly.
+const immutableDoug: Readonly<ImmutablePerson> = {
+  name: 'Doug',
+  age: 22,
+};
+
+// Now if I try to change age of newDoug, this error would appear
+// Cannot assign to 'age' because it is a read-only property.
+// immutableDoug.age = 22;
