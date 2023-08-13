@@ -9,8 +9,10 @@ import ReactDOM from 'react-dom/client';
 //   AppRef,
 //   UseStateHook
 // } from './hooks';
+// import { FormApp } from './forms';
+import { AppStyles } from './styles/AppStyles';
+
 import './index.css';
-import { FormApp } from './forms';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -19,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* <AppRef /> */}
     {/* <AppReducer /> */}
     {/* <MemoCallbackApp /> */}
-    <FormApp />
+    {/* <FormApp /> */}
+    <AppStyles />
   </React.StrictMode>
 );
