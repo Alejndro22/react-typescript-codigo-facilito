@@ -1,6 +1,11 @@
 import '../App.css';
 // import { CSSProperties } from 'react';
 
+// import Logo from '../assets/react.svg';
+
+// TypeSafety - Frameworks lime Bulma, Tailwind use them
+// Recommended to look more into it
+
 export const AppStyles = () => {
   return (
     <div className='App'>
