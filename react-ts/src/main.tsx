@@ -10,7 +10,8 @@ import ReactDOM from 'react-dom/client';
 //   UseStateHook
 // } from './hooks';
 // import { FormApp } from './forms';
-import { AppStyles } from './styles/AppStyles';
+// import { AppStyles } from './styles/AppStyles';
+import { ErrorsApp } from './errors/ErrorsApp';
 
 import './index.css';
 
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* <AppReducer /> */}
     {/* <MemoCallbackApp /> */}
     {/* <FormApp /> */}
-    <AppStyles />
+    {/* <AppStyles /> */}
+    <ErrorsApp />
   </React.StrictMode>
 );
