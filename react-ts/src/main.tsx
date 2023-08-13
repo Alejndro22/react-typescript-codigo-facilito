@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  MemoCallbackApp,
-  // AppReducer,
-  // MemoCallAppBadUse,
-  // AppReducerBadUse,
-  // AppContext,
-  // AppRef,
-  // UseStateHook
-} from './hooks';
+// import {
+//   MemoCallbackApp,
+//   AppReducer,
+//   MemoCallAppBadUse,
+//   AppReducerBadUse,
+//   AppContext,
+//   AppRef,
+//   UseStateHook
+// } from './hooks';
 import './index.css';
+import { FormApp } from './forms';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* <AppContext /> */}
     {/* <AppRef /> */}
     {/* <AppReducer /> */}
-    <MemoCallbackApp />
+    {/* <MemoCallbackApp /> */}
+    <FormApp />
   </React.StrictMode>
 );
