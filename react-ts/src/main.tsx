@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  AppReducer,
+  MemoCallbackApp,
+  // AppReducer,
+  // MemoCallAppBadUse,
   // AppReducerBadUse,
   // AppContext,
   // AppRef,
@@ -14,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* <UseStateHook /> */}
     {/* <AppContext /> */}
     {/* <AppRef /> */}
-    <AppReducer />
+    {/* <AppReducer /> */}
+    <MemoCallbackApp />
   </React.StrictMode>
 );
